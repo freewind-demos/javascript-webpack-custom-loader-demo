@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
     entry: './entry.js',
     output: {
@@ -6,11 +8,9 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.less$/,
+            test: /\.hello/,
             use: [
-                {loader: 'style-loader'},
-                {loader: 'css-loader'},
-                {loader: 'less-loader'}
+                {loader: path.resolve('./src/hello-loader.js')}
             ]
         }]
     }
